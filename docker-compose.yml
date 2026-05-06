@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      - ENV_FILE_PATH=/app/data/.env
+      # Optional: set OPENAI_API_KEY in your shell or a .env file next to docker-compose.yml
+      # and it will be passed through automatically. If not set, use the Settings page instead.
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - pdf_counsel_indexes:/app/indexes
+      - pdf_counsel_history:/app/history
+      - pdf_counsel_env:/app/data
+    restart: unless-stopped
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - internal
+
+volumes:
+  pdf_counsel_indexes:
+  pdf_counsel_history:
+  pdf_counsel_env:
+
+networks:
+  internal:

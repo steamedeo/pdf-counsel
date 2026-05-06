@@ -1,5 +1,7 @@
 # pdfcounsel
 
+![status](https://img.shields.io/badge/status-beta-yellow)
+
 **Chat with any legal document. Get verbatim citations, not summaries.**
 
 Upload a PDF (or a stack of them), ask a question, and get an answer that quotes the exact passage — verbatim text, document name, page number. Every answer is grounded in what you uploaded. If it's not in the document, it says so.

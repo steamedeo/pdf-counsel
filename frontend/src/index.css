@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap");
+
+:root {
+  --bg: oklch(97% 0.008 250);
+  --bg-panel: oklch(100% 0.004 250);
+  --bg-hover: oklch(94% 0.01 250);
+  --border: oklch(88% 0.012 250);
+  --border-lt: oklch(93% 0.008 250);
+  --text: oklch(18% 0.015 260);
+  --text-2: oklch(45% 0.015 260);
+  --text-3: oklch(62% 0.012 260);
+  --accent: oklch(45% 0.22 300);
+  --accent-lt: oklch(96% 0.04 300);
+  --accent-grad: linear-gradient(135deg, oklch(52% 0.24 310), oklch(38% 0.22 285));
+  --danger: oklch(52% 0.18 25);
+  --success: oklch(52% 0.14 155);
+  --radius: 8px;
+  --radius-lg: 14px;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: inherit;
+}
