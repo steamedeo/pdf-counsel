@@ -38,7 +38,7 @@ Go to [platform.openai.com/api-keys](https://platform.openai.com/api-keys), crea
 Requirements: Docker and Docker Compose.
 
 ```bash
-git clone https://github.com/your-username/pdfcounsel
+git clone https://github.com/steamedeo/pdfcounsel
 cd pdfcounsel
 docker compose up --build
 ```
@@ -50,7 +50,7 @@ Open [http://localhost](http://localhost).
 Requirements: Python 3.10+, Node.js 18+.
 
 ```bash
-git clone https://github.com/your-username/pdfcounsel
+git clone https://github.com/steamedeo/pdfcounsel
 cd pdfcounsel
 
 # macOS / Linux
@@ -139,4 +139,4 @@ pdfcounsel/
 
 ## License
 
-MIT
+[MIT](LICENSE)
