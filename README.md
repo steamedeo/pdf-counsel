@@ -42,10 +42,15 @@ Requirements: Docker and Docker Compose.
 ```bash
 git clone https://github.com/steamedeo/pdfcounsel
 cd pdfcounsel
-docker compose up --build
+
+# macOS / Linux
+./docker-run.sh
+
+# Windows
+.\docker-run.ps1
 ```
 
-Open [http://localhost](http://localhost).
+The script checks that Docker is running, builds the images, starts everything in the background, and opens [http://localhost](http://localhost) automatically.
 
 **Option B — Local (no Docker)**
 
@@ -59,7 +64,7 @@ cd pdfcounsel
 ./run.sh
 
 # Windows
-run.bat
+.\run.ps1
 ```
 
 The script installs dependencies, starts the backend and frontend, and opens the browser.
@@ -117,7 +122,8 @@ pdfcounsel/
 ├── Dockerfile.backend
 ├── Dockerfile.frontend
 ├── docker-compose.yml
-├── run.sh / run.bat
+├── docker-run.sh / docker-run.ps1
+├── run.sh / run.ps1
 └── requirements.txt
 ```
 
@@ -134,8 +140,6 @@ pdfcounsel/
 ## Roadmap
 
 - Ollama support (fully offline, no API key required)
-- Word and HTML document support
-- Improved chunking for tables and multi-column layouts
 
 ---
 
