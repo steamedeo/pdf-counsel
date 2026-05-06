@@ -1,0 +1,11 @@
+.env
+indexes/
+history/
+__pycache__/
+*.pyc
+.venv/
+venv/
+frontend/node_modules/
+frontend/dist/
+.claude
+tests/.tmp_history/
